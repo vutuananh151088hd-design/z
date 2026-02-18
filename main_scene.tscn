@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://quubuxnt2j8u"]
+
+[ext_resource type="Script" uid="uid://2o5jl1sy6xr6" path="res://main_scene.gd" id="1_0f027"]
+[ext_resource type="Texture2D" uid="uid://bqjwrbgnbf5tn" path="res://icon.svg" id="2_2c62f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2c62f"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[node name="MainScene" type="Node2D" unique_id=1450833814]
+position = Vector2(127, 141)
+script = ExtResource("1_0f027")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1062299600]
+
+[node name="left" type="Button" parent="UI" unique_id=210089300]
+offset_left = 38.0
+offset_top = 499.0
+offset_right = 212.0
+offset_bottom = 557.0
+text = "left"
+
+[node name="right" type="Button" parent="UI" unique_id=1741723799]
+offset_left = 332.0
+offset_top = 493.0
+offset_right = 506.0
+offset_bottom = 551.0
+text = "right"
+
+[node name="up" type="Button" parent="UI" unique_id=1599461277]
+offset_left = 191.0
+offset_top = 399.0
+offset_right = 365.0
+offset_bottom = 457.0
+text = "up"
+
+[node name="down" type="Button" parent="UI" unique_id=1165456260]
+offset_left = 199.0
+offset_top = 570.0
+offset_right = 373.0
+offset_bottom = 628.0
+text = "down"
+
+[node name="Player" type="Sprite2D" parent="." unique_id=1266376608]
+position = Vector2(413, 149)
+texture = ExtResource("2_2c62f")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=856925349]
+position = Vector2(-371, -110)
+offset = Vector2(413, 149)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=693578937]
+z_index = -1
+position = Vector2(434, 380)
+scale = Vector2(23.570314, 20.613281)
+texture = SubResource("CompressedTexture2D_2c62f")
+
+[connection signal="button_down" from="UI/left" to="." method="_on_left_button_down"]
+[connection signal="button_up" from="UI/left" to="." method="_on_left_button_up"]
+[connection signal="button_down" from="UI/right" to="." method="_on_right_button_down"]
+[connection signal="button_up" from="UI/right" to="." method="_on_right_button_up"]
+[connection signal="button_down" from="UI/up" to="." method="_on_up_button_down"]
+[connection signal="button_up" from="UI/up" to="." method="_on_up_button_up"]
+[connection signal="button_down" from="UI/down" to="." method="_on_down_button_down"]
+[connection signal="button_up" from="UI/down" to="." method="_on_down_button_up"]
